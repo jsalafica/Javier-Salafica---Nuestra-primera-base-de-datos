@@ -51,7 +51,7 @@ const messageApi = new Contenedor(
   {
     client: "sqlite3",
     connection: {
-      filename: path.resolve(__dirname, "./database/coderhouse.sqlite"),
+      filename: path.resolve(__dirname, "./database/ecommerce.sqlite"),
     },
     useNullAsDefault: true,
   },
