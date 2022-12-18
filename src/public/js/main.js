@@ -49,14 +49,13 @@ const sendProduct = (producInfo) => {
 const renderProduct = (product) => {
   const html = product.map((prod) => {
     return `
-            <tr>
-            <td>${prod.title}</td>
-            <td>${prod.price}</td>
-            <td><img src="${prod.thumbnail}" alt="producto" width="50px"></td>
-            </tr>
-            `;
+          <tr>
+          <td>${prod.title}</td>
+          <td>${prod.price}</td>
+          <td><img src="${prod.thumbnail}" alt="producto" width="50px"></td>
+          </tr>
+          `;
   });
-
   productList.innerHTML = html.join("");
 };
 

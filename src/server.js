@@ -31,8 +31,6 @@ const expressServer = app.listen(8080, () => {
 });
 const io = new IOServer(expressServer);
 
-const products = [];
-
 const productApi = new Contenedor(
   {
     client: "mysql",
@@ -73,7 +71,7 @@ io.on("connection", async (socket) => {
   });
 
   // Productos
-  socket.emit("server:product", products);
+  socket.emit("server:product", await productApi.getAll());
   socket.on("client:product", async (product) => {
     await productApi.save({
       title: product.title,

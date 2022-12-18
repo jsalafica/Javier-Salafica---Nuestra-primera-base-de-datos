@@ -16,30 +16,30 @@ class Contenedor {
     }
   }
 
-  async replace(id, document) {
-    try {
-      const response = await this.database(this.table)
-        .where({ id })
-        .update(document);
+  // async replace(id, document) {
+  //   try {
+  //     const response = await this.database(this.table)
+  //       .where({ id })
+  //       .update(document);
 
-      return response;
-    } catch (err) {
-      throw new Error(`error: documento no encontrado`);
-    }
-  }
+  //     return response;
+  //   } catch (err) {
+  //     throw new Error(`error: documento no encontrado`);
+  //   }
+  // }
 
-  async getById(id) {
-    try {
-      const response = await this.database
-        .from(this.table)
-        .select("*")
-        .where({ id });
+  // async getById(id) {
+  //   try {
+  //     const response = await this.database
+  //       .from(this.table)
+  //       .select("*")
+  //       .where({ id });
 
-      return response;
-    } catch (err) {
-      throw new Error(`No se encuentra el documento con id: ${err}`);
-    }
-  }
+  //     return response;
+  //   } catch (err) {
+  //     throw new Error(`No se encuentra el documento con id: ${err}`);
+  //   }
+  // }
 
   async getAll() {
     try {
@@ -50,23 +50,23 @@ class Contenedor {
     }
   }
 
-  async deleteById(id) {
-    try {
-      await this.database(this.table).del().where({ id });
+  // async deleteById(id) {
+  //   try {
+  //     await this.database(this.table).del().where({ id });
 
-      return true;
-    } catch (err) {
-      throw new Error(`Error al borrar data: ${err}`);
-    }
-  }
+  //     return true;
+  //   } catch (err) {
+  //     throw new Error(`Error al borrar data: ${err}`);
+  //   }
+  // }
 
-  async deleteAll() {
-    try {
-      await this.database(this.table).del();
-    } catch (err) {
-      throw new Error(`Error al escribir: ${err}`);
-    }
-  }
+  // async deleteAll() {
+  //   try {
+  //     await this.database(this.table).del();
+  //   } catch (err) {
+  //     throw new Error(`Error al escribir: ${err}`);
+  //   }
+  // }
 }
 
 export default Contenedor;
